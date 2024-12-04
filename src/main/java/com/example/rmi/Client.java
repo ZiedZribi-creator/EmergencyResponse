@@ -13,7 +13,7 @@ public class Client {
             server.sendEmergencyNotification("Fire in the building!");
 
             // Simulating sending position (ambulance)
-            server.sendPosition("Ambulance at location X");
+            server.sendPosition("Ambulance A at location X");
 
             // Simulating confirming the mission
             server.confirmMission("Mission received, proceeding to the location.");
