@@ -1,16 +1,22 @@
 package com.example.rmi;
 
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
+import java.rmi.Naming;
+import java.rmi.RemoteException;
 
 public class Client {
+
     public static void main(String[] args) {
         try {
-            Registry registry = LocateRegistry.getRegistry("localhost", 1099);
-            RemoteInterface stub = (RemoteInterface) registry.lookup("HelloService");
+            RemoteInterface server = (RemoteInterface) Naming.lookup("rmi://localhost/EmergencyResponse");
+            
+            // Simulating sending emergency notification
+            server.sendEmergencyNotification("Fire in the building!");
 
-            String response = stub.sayHello("World");
-            System.out.println("Response: " + response);
+            // Simulating sending position (ambulance)
+            server.sendPosition("Ambulance at location X");
+
+            // Simulating confirming the mission
+            server.confirmMission("Mission received, proceeding to the location.");
         } catch (Exception e) {
             e.printStackTrace();
         }

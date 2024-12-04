@@ -1,28 +1,39 @@
 package com.example.rmi;
 
 import java.rmi.RemoteException;
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
-public class Server implements RemoteInterface {
+public class Server extends UnicastRemoteObject implements RemoteInterface {
 
-    public Server() {}
+    protected Server() throws RemoteException {
+        super();
+    }
 
     @Override
-    public String sayHello(String name) throws RemoteException {
-        return "Hello, " + name + "!";
+    public void sendEmergencyNotification(String emergencyDetails) throws RemoteException {
+        System.out.println("Emergency Notification: " + emergencyDetails);
+    }
+
+    @Override
+    public void confirmMission(String missionDetails) throws RemoteException {
+        System.out.println("Mission Confirmed: " + missionDetails);
+    }
+
+    @Override
+    public void sendPosition(String position) throws RemoteException {
+        System.out.println("Position Sent: " + position);
+    }
+
+    @Override
+    public void createEmergency(String emergencyDetails) throws RemoteException {
+        System.out.println("Creating Emergency: " + emergencyDetails);
     }
 
     public static void main(String[] args) {
         try {
             Server server = new Server();
-            RemoteInterface stub = (RemoteInterface) UnicastRemoteObject.exportObject(server, 0);
-
-            // Bind the remote object to the registry
-            Registry registry = LocateRegistry.createRegistry(1099);
-            registry.bind("HelloService", stub);
-
+            java.rmi.registry.LocateRegistry.createRegistry(1099);
+            java.rmi.Naming.rebind("EmergencyResponse", server);
             System.out.println("Server is running...");
         } catch (Exception e) {
             e.printStackTrace();
