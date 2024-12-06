@@ -1,7 +1,5 @@
 package com.example.rmi;
-
 import java.io.Serializable;
-
 public class Ambulance implements Serializable {
     private static final long serialVersionUID = 1L; // For serialization
     private String id;          // Unique identifier for the ambulance
