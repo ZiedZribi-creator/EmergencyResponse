@@ -104,7 +104,7 @@ public class AmbulanceClientGUI extends JFrame {
 
     private void connectToService() {
         try {
-            Registry registry = LocateRegistry.getRegistry("localhost", 1099);
+            Registry registry = LocateRegistry.getRegistry("localhost", 2002);
             service = (AmbulanceService) registry.lookup("AmbulanceService");
         } catch (Exception e) {
             e.printStackTrace();

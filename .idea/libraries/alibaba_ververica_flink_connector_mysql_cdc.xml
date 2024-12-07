@@ -4,9 +4,7 @@
     <ANNOTATIONS>
       <root url="file://$PROJECT_DIR$/lib" />
     </ANNOTATIONS>
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/flink-connector-mysql-cdc-1.3.0.jar!/" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC />
     <SOURCES />
   </library>
