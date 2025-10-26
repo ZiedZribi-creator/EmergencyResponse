@@ -28,7 +28,8 @@ The project is organized as follows:
 ## System Architecture
 
 ### Class Diagram
-![Class Diagram](images/diagramme%20de%20classe.png)
+<img width="326" height="729" alt="diagramme de classe" src="https://github.com/user-attachments/assets/fca5d66d-864b-42b8-914a-77230c646eec" />
+
 
 The class diagram shows the relationships between key components:
 - CentreUrgence (Emergency Center)
@@ -37,7 +38,8 @@ The class diagram shows the relationships between key components:
 - Incident_Ambulance
 
 ### General Architecture
-![General Architecture](images/diagrammeUML-arch_generale.drawio%20(2).png)
+<img width="945" height="637" alt="diagrammeUML-arch_generale drawio (2)" src="https://github.com/user-attachments/assets/9dd45759-724c-4998-b67a-395b082bba60" />
+
 
 The system consists of:
 - Emergency Center Client (PC or Raspberry Pi)
@@ -46,7 +48,8 @@ The system consists of:
 - Multiple Ambulance Clients (Raspberry Pi with touch screen)
 
 ### Sequence Diagram
-![Sequence Diagram](images/diagramseq.png)
+<img width="471" height="355" alt="diagramseq" src="https://github.com/user-attachments/assets/7be2eadf-f313-434d-8343-8af96e980bbc" />
+
 
 Shows the interaction flow:
 1. Create Incident (position, type)
@@ -57,7 +60,8 @@ Shows the interaction flow:
 6. Update Intervention Status
 
 ### Use Case Diagram
-![Use Case Diagram](images/USEcaseDiagram.png)
+
+<img width="1373" height="332" alt="USEcaseDiagram" src="https://github.com/user-attachments/assets/2d23e130-e129-476c-b2f0-84406de308a4" />
 
 Main functionalities:
 - Create Incident
